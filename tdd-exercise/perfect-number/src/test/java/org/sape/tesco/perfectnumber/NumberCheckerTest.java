@@ -22,6 +22,14 @@ public class NumberCheckerTest {
 		assertTrue(NumberChecker.checkNumber(6));
 	}
 	
+	@Test
+	public void testCheckNumberWith28() {
+		assertTrue(NumberChecker.checkNumber(28));
+	}
 	
+	@Test
+	public void testCheckNumberWith33() {
+		assertFalse(NumberChecker.checkNumber(33));
+	}
 
 }
