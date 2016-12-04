@@ -6,6 +6,10 @@ public class ToolFactory {
 		AbstractTool tool=null;
 		if(toolType.name().equals(ToolType.SCISSOR.name())){
 			tool = new Scissor();
+		}else if(toolType.name().equals(ToolType.STONE.name())){
+			tool = new Stone();
+		}else if(toolType.name().equals(ToolType.PAPER.name())){
+			tool = new Paper();
 		}
 		return tool;
 	}

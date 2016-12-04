@@ -31,5 +31,16 @@ public class ModelTest {
 		assertEquals(tool.toString(),ToolType.SCISSOR.getName());
 	}
 	
+	@Test
+	public void testToolFactoryForStone(){
+		AbstractTool tool = ToolFactory.getTool(ToolType.STONE);
+		assertEquals(tool.toString(),ToolType.STONE.getName());
+	}
+	
+	@Test
+	public void testToolFactoryForPaper(){
+		AbstractTool tool = ToolFactory.getTool(ToolType.PAPER);
+		assertEquals(tool.toString(),ToolType.PAPER.getName());
+	}
 
 }
