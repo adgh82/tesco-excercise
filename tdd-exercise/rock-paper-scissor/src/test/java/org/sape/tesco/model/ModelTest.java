@@ -1,12 +1,18 @@
 package org.sape.tesco.model;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
+
 import org.junit.Test;
+import org.sape.tesco.exception.DataException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class ModelTest {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(ModelTest.class);
 
 	@Test
 	public void testCreateScissorTool() {
@@ -52,6 +58,18 @@ public class ModelTest {
 		}catch(Exception e){
 			fail("Failed top add superior tool");
 		}
+	}
+	
+	@Test
+	public void testAddSuperiorNullTool(){
+		AbstractTool tool = new Scissor();
+		try{
+		tool.addSuperiorTool(null,"Stone Crushes scissor");
+		fail("Null tool type should throw message");
+		}catch(DataException e){
+			LOG.info("Caught required error",e);
+		}
+		
 	}
 	
 	
