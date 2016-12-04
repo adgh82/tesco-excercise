@@ -72,6 +72,18 @@ public class ModelTest {
 		
 	}
 	
+	@Test
+	public void testAddSuperiorNullToolMessage(){
+		AbstractTool tool = new Scissor();
+		try{
+		tool.addSuperiorTool(ToolType.STONE,null);
+		fail("Null message should throw message");
+		}catch(DataException e){
+			LOG.info("Caught required error",e);
+		}
+		
+	}
+	
 	
 	
 

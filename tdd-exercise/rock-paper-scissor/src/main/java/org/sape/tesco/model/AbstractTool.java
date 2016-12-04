@@ -20,11 +20,14 @@ public class AbstractTool {
 		return toolName.getName();
 	}
 
-	public void addSuperiorTool(ToolType toolType, String string) throws DataException {
+	public void addSuperiorTool(ToolType toolType, String message) throws DataException {
 		if(null==toolType){
 			throw new DataException("Tool type cannot be null");
 		}
-		superiorTool.put(toolType, string);		
+		if(null==message){
+			throw new DataException("Message cannot be null");
+		}
+		superiorTool.put(toolType, message);		
 	}
 	
 	
