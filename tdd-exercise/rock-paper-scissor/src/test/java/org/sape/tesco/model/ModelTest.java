@@ -12,7 +12,11 @@ public class ModelTest {
 		assertNotNull("Failed to create scissor Tool", scissor);		
 	}
 	
-	
+	@Test
+	public void testCreateStoneTool(){
+		AbstractTool stone = new Stone();
+		assertNotNull("Failed to create scissor Tool", stone);	
+	}
 	
 
 }
