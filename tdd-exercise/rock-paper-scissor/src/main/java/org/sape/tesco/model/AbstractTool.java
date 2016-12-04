@@ -67,14 +67,13 @@ public class AbstractTool {
 			LOG.info("This is a superior tool,...{}",inferiorTool.get(tool.toString()));
 			return TOOL_SUPERIOR;
 		}else if(superiorTool.containsKey(tool.toString())){
-			LOG.info("This is an inferior tool,...{}",inferiorTool.get(tool.toString()));
+			LOG.info("This is an inferior tool,...{}",superiorTool.get(tool.toString()));
 			return TOOL_INFERIOR;
 		}else if(isSameTool(tool)){
 			return TOOL_TIE;
 		}else {
 			throw new DataException("Tool not found");
-		}
-		
+		}		
 	}
 	
 	

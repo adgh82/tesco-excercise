@@ -141,6 +141,34 @@ public class ModelTest {
 		}
 	}
 	
+	@Test
+	public void testSuperiorityTie(){
+		LOG.debug("testing isSuperiorTool");
+		AbstractTool scissor = new Scissor();
+		AbstractTool anotherScissor = new Scissor();
+		try {
+			scissor.addSuperiorTool(ToolType.STONE, "Stone Breaks scissor");
+			assertTrue(TOOL_TIE==scissor.checkSuperiority(anotherScissor));
+		} catch (DataException e) {
+			fail("Issue ocurred adding inferior tool");
+		}
+	}
+	
+	@Test
+	public void testSuperiorityException(){
+		LOG.debug("testing isSuperiorTool");
+		AbstractTool scissor = new Scissor();
+		AbstractTool paper = new Paper();
+		
+		try {
+			scissor.addSuperiorTool(ToolType.STONE, "Stone Breaks scissor");
+			assertTrue(TOOL_TIE==scissor.checkSuperiority(paper));
+			fail("Exception should be caught");
+		} catch (DataException e) {
+			LOG.info("Caught reuqired exception",e);
+		}
+	}
+	
 	
 	
 	
