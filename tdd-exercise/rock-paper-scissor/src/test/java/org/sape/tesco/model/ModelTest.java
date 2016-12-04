@@ -2,6 +2,7 @@ package org.sape.tesco.model;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.Test;
 
 
@@ -42,5 +43,18 @@ public class ModelTest {
 		AbstractTool tool = ToolFactory.getTool(ToolType.PAPER);
 		assertEquals(tool.toString(),ToolType.PAPER.getName());
 	}
+	
+	@Test
+	public void testAddSuperiorTool(){
+		AbstractTool tool = new Scissor();
+		try{
+		tool.addSuperiorTool(ToolType.STONE,"Stone Crushes scissor");
+		}catch(Exception e){
+			fail("Failed top add superior tool");
+		}
+	}
+	
+	
+	
 
 }
