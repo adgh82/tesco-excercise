@@ -9,11 +9,13 @@ public class AbstractTool {
 	
 	private ToolType toolName;
 	private Map<ToolType,String> superiorTool;
+	private Map<ToolType,String> inferiorTool;
 	
 	protected AbstractTool(ToolType toolType){
 		
 		toolName = toolType;
 		superiorTool = new HashMap<ToolType,String>();
+		inferiorTool = new HashMap<ToolType,String>();
 	}
 	
 	public String toString(){
@@ -29,6 +31,12 @@ public class AbstractTool {
 		}
 		superiorTool.put(toolType, message);		
 	}
+	
+	public void addInferiorTool(ToolType toolType, String message) throws DataException {
+		
+		inferiorTool.put(toolType, message);		
+	}
+	
 	
 	
 

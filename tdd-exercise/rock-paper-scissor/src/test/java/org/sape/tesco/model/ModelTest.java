@@ -80,8 +80,17 @@ public class ModelTest {
 		fail("Null message should throw message");
 		}catch(DataException e){
 			LOG.info("Caught required error",e);
+		}		
+	}
+	
+	@Test 
+	public void testAddInferiorTool(){
+		AbstractTool tool = new Scissor();
+		try{
+		tool.addInferiorTool(ToolType.PAPER,"Scissor cuts paper");
+		}catch(Exception e){
+			fail("Failed top add inferior tool");
 		}
-		
 	}
 	
 	
