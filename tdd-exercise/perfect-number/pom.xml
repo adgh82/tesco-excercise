@@ -7,17 +7,28 @@
     <artifactId>tdd-exercise</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.sape.tesco</groupId>
+  
   <artifactId>perfect-number</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  
   <name>perfect-number</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <artifactId>junit</artifactId>      
       <scope>test</scope>
     </dependency>
+    <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
   </dependencies>
 </project>
